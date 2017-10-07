@@ -1,14 +1,16 @@
 import React from 'react';
 import { Component } from 'react';
-import { Link } from 'react-router';
+import PropTypes from 'prop-types';
 import TimeAgo from 'timeago-react'
 
 export class Timeago extends Component {
   render() {
     if (!this.props.time) { return <abbr></abbr> }
     const date = new Date(this.props.time);
+    const dateString = [date.toLocaleDateString(), date.toLocaleTimeString()].join(' ');
+
     return (
-      <TimeAgo datetime={date} locale='es' />
+      <TimeAgo title={dateString} datetime={date} locale='es' />
     )
   }
 }
