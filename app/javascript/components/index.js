@@ -6,7 +6,7 @@ export * from './icon_button';
 export * from './like_button';
 export * from './node_link';
 export * from './topic_link';
-export * from './topics/topic';
+export * from './reservation';
 export * from './topics/reply';
 export * from './users/user_reply';
 export * from './users/user_card';

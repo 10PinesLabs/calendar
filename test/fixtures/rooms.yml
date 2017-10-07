@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+red:
+  name: Sala Roja
+  description: Es una sala roja
+
+blue:
+  name: Sala azul
+  description: Es una sala azul
+
+misc:
+  name: Sala miscelania
+  description: Es una sala miscelania

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, IndexLink } from 'react-router';
 import { UserAvatarLink, NodeLink, PageLoading } from 'components';
-import { TopicList } from 'containers';
+import { ReservationList } from 'containers';
 
 export class User extends React.Component {
   constructor(props){
