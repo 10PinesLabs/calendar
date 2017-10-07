@@ -31,7 +31,7 @@ export class User extends React.Component {
 
   render() {
     const user = this.state.user;
-    if (!user) { return <PageLoading text="载入中..." />; }
+    if (!user) { return <PageLoading text="Wait..." />; }
 
     return (
       <div className="user-profile">

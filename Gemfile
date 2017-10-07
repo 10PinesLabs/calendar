@@ -19,6 +19,7 @@ gem 'bootstrap', '4.0.0.alpha6'
 gem 'font-awesome-rails'
 gem 'webpacker', github: 'rails/webpacker'
 
+gem "omniauth-google-oauth2", "~> 0.5.2"
 gem 'oauth2'
 gem 'faraday'
 

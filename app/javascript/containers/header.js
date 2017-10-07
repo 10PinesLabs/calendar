@@ -23,26 +23,26 @@ export class Header extends Component {
           </button>
           <div className="collapse navbar-collapse" id="main-nav-menu">
             <ul className="nav navbar-nav main-nav mr-auto mt-2 mt-md-0">
-              <li className="nav-item"><IndexLink className="nav-link" activeClassName="active" to="/">社区</IndexLink></li>
-              <li className="nav-item"><Link className="nav-link" activeClassName="active" to="/topics/popular">优质话题</Link></li>
-              <li className="nav-item"><Link className="nav-link" activeClassName="active" to="/topics/no-reply">无人问津</Link></li>
-              <li className="nav-item"><Link className="nav-link" activeClassName="active" to="/topics/recent">最新发布</Link></li>
+              <li className="nav-item"><IndexLink className="nav-link" activeClassName="active" to="/">Home</IndexLink></li>
+              <li className="nav-item"><Link className="nav-link" activeClassName="active" to="/topics/popular">Popular</Link></li>
+              <li className="nav-item"><Link className="nav-link" activeClassName="active" to="/topics/no-reply">No Replys</Link></li>
+              <li className="nav-item"><Link className="nav-link" activeClassName="active" to="/topics/recent">Recent</Link></li>
             </ul>
 
             {currentUser && (
               <ul className="nav navbar-nav my-2 my-lg-0">
                 <li className="nav-item">
-                  <UserAvatarLink user={currentUser} className="nav-link" size="md" />
+                  <UserAvatarLink user={currentUser} className="nav-link" size="50" />
                 </li>
                 <li className="nav-item">
-                  <a href="#" className="nav-link" onClick={this.signOut.bind(this)}>登出</a>
+                  <a className="nav-link" href="/signout">Sign Out</a>
                 </li>
               </ul>
             )}
 
             {!currentUser && (
               <ul className="nav navbar-nav my-2 my-lg-0">
-                <li className="nav-item"><a className="nav-link" href="/oauth/new">登录</a></li>
+                <li className="nav-item"><a className="nav-link" href="/auth/google_oauth2" title="Sign in with Google">Sign in</a></li>
               </ul>
             )}
           </div>
