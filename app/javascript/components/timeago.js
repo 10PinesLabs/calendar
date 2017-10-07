@@ -8,7 +8,7 @@ export class Timeago extends Component {
     if (!this.props.time) { return <abbr></abbr> }
     const date = new Date(this.props.time);
     return (
-      <TimeAgo datetime={date} locale='zh_CN' />
+      <TimeAgo datetime={date} locale='es' />
     )
   }
 }
