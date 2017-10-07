@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ReactRailsExample</title>
+    <meta charset='utf-8' />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="no">
+    <meta content='True' name='HandheldFriendly' />
+    <meta name="robots" content="noindex">
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+  <script type="text/javascript">
+  <% if current_user %>
+  window.currentUser = {
+    "id" : <%= current_user[:id] %>,
+    "name" : "<%= current_user[:name] %>",
+    "login" : "<%= current_user[:login] %>",
+    "avatar_url" : "<%= current_user[:avatar_url] %>",
+    "accessToken" : "<%= current_user.dig(:token, :access_token) %>"
+  };
+  <% else %>
+  window.currentUser = null;
+  <% end %>
+  </script>
+  <%= javascript_pack_tag 'vendor' %>
+  <%= javascript_pack_tag 'homeland' %>
+</html>

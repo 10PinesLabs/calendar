@@ -1,0 +1,302 @@
+/*
+ *= require bootstrap-theme
+ *= require font-awesome
+ *= require markdown
+ *= require_self
+ */
+
+@import "vars";
+
+body {
+  padding-top: 50px;
+}
+
+#footer {
+  border-top: 1px solid #ddd;
+  background: #f0f0f0;
+  padding: 20px 0 60px 0;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color: #666 !important;
+  b { color: $red !important; }
+
+  sup { font-size: 11px; color: #999; font-weight: normal; }
+}
+
+.navbar {
+  .avatar { width: 20px; height: 20px; }
+}
+
+.main-layout {
+  margin-top: 30px;
+}
+
+.media-body {
+  overflow: hidden;
+}
+
+.data-loading {
+  padding: 50px 0;
+  text-align: center;
+}
+
+.node-badge {
+  display: inline-block;
+  width: 10px; height: 10px;
+  margin-right: 2px;
+}
+
+.avatar {
+  width: 48px; height: 48px;
+  border-radius: 180px;
+}
+
+.avatar-xs { width: 16px; height: 16px; border-radius: 120px; }
+.avatar-sm { width: 32px; height: 32px; border-radius: 120px; }
+.avatar-md { width: 48px; height: 48px; border-radius: 120px; }
+
+time { border-bottom: 1px dashed #eee; color: #666; font-size: 12px; }
+
+.hide { display: none; }
+
+.form-buttons {
+  .btn { margin-right: 8px; }
+}
+
+.btn-opt {
+  line-height: 100%;
+  padding: 6px 8px 8px 8px;
+  font-size: 14px;
+  display: inline-block;
+
+  &:link,
+  &:visited,
+  &:active {
+    color: #555;
+    text-decoration: none;
+  }
+
+  &:hover {
+    text-decoration: none;
+    background: #F0F0F0;
+  }
+}
+
+.page-loading {
+  padding: 20px 0;
+  .text {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+}
+
+.topic-link {
+  .node { margin-right: 5px; color: #888; font-weight: normal; }
+  i.fa {
+    margin-left: 5px;
+    &.fa-diamond { color: $red; }
+  }
+}
+
+.topics {
+  .table thead th {
+    background: #f5f5f5;
+    border-bottom: 0px;
+    border-top: 0px;
+  }
+  .topic {
+    font-size: 13px;
+    td { padding-top: 13px; padding-bottom: 13px; }
+    td.title {
+      font-size: 16px;
+    }
+    .author {
+      width: 70px;
+      .avatar { width: 24px; height: 24px; }
+    }
+    .replies {
+      min-width: 100px;
+      span { margin-right: 10px; }
+      i.fa { color: lighten($black, 60%); }
+      i.fa-heart { color: lighten($red, 20%); }
+    }
+    .activity {
+      width: 80px;
+    }
+  }
+}
+
+.topic-detail {
+  padding-bottom: 40px;
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+
+    .node { display: inline-block; font-size: 14px; margin-left: 10px; }
+  }
+
+  .reply {
+    padding: 15px;
+    margin: 0 -15px;
+    border-bottom: 1px solid #eee;
+
+    &.light { background:#F7F2FC; }
+    &.popular { background:#fffce9; }
+    &.reply-system,
+    &.reply-deleted {
+      padding-top: 8px;
+      padding-bottom: 8px;
+      font-size: 12px;
+      color: #666;
+      border-bottom: 1px solid #F0F0F0;
+
+      .topic-link { margin: 0 5px; }
+
+      img.media-object {
+        border-radius: 180px;
+        display: inline-block;
+        width: 16px; height: 16px;
+        margin-right: 3px;
+        vertical-align: text-bottom;
+      }
+
+      time { margin-left: 4px; color: #aaa; }
+    }
+
+    .media-left {
+      .media-object { width: 48px; height: 48px; border-radius: 180px; }
+    }
+
+    .media-heading {
+      font-size: 13px;
+      margin-bottom: 8px;
+
+      .user-name { color: #666; font-weight: bold; }
+      .floor { color: darken($green, 5%); margin-right: 5px; }
+      .date { margin-left: 5px; }
+    }
+
+    .reply-to {
+      font-size: 12px;
+      background: #f9f9f9;
+
+      .heading {
+        font-size: 14px;
+      }
+
+      .opts {
+      }
+    }
+    .media-footer {
+      margin-top: 15px;
+
+      .btn-icon {
+        margin-right: 6px;
+        font-size: 14px;
+      }
+
+      .opts {
+        .btn-icon { margin-left: 6px; margin-right: 0; }
+      }
+    }
+  }
+}
+
+#reply-panel {
+  padding-bottom: 40px;
+
+  &.navbar-light {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid #eee !important;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.28);
+  }
+}
+
+.nodes {
+  margin-bottom: 20px;
+
+  .node-item {
+    padding: 15px 15px;
+    border: 1px solid #eee;
+    &:last-child {
+      border-bottom: 1px solid #eee;
+    }
+    border-bottom: 0px;
+    border-left: 5px solid #EEE;
+
+
+    .info {
+      .title {
+        font-size: 18px; font-weight: bold;
+        .count { font-weight: normal; font-size: 14px; }
+      }
+      .desc { color: #666; margin-top: 10px; }
+    }
+
+    .topics {
+      .item {
+        margin: 3px;
+        a { color: #333;  font-size: 13px; }
+        .timeago { font-size: 12px; }
+      }
+    }
+  }
+}
+
+
+.user-profile {
+  .user-info {
+    margin-bottom: 15px;
+    .avatar {
+      margin: 10px auto;
+    }
+
+    .card-footer {
+      a { margin: 0 5px; }
+    }
+  }
+
+  .nav-pills {
+    margin-bottom: 15px;
+
+    .count {
+      font-size: 12px; color: #999; margin-left: 3px;
+    }
+    .active {
+      .count { color: darken(#fff, 10%); }
+    }
+  }
+}
+
+.reply-panel {
+  z-index: 999;
+  width: 100%;
+  background: #f0f0f0;
+  border-top: 1px solid #ddd;
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.user-reply-list {
+  .user-reply {
+    border-top: 1px solid #ddd;
+    padding: 15px;
+
+    .media-heading {
+      margin-bottom: 10px;
+      font-size: 12px;
+      a { color: #999; }
+    }
+  }
+}
+
+.user-card {
+  min-height: 150px;
+  overflow: hidden;
+}
