@@ -7,7 +7,7 @@ class Reservation < ApplicationRecord
   def as_json(_options = {})
     super(include: {
       room: { only: %i[name id] },
-      user: { only: %i[first_name last_name id] },
+      user: { only: %i[id avatar], methods: :full_name },
       metadata: { only: %i[description icon] }
     }
     )
