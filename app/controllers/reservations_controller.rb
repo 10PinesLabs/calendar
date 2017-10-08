@@ -1,6 +1,13 @@
 class ReservationsController < ApplicationController
   def index
-    render json: ReservationsHelper.list_view(Reservation.all)
+    date = params[:date] ? params[:date] : Date.today
+    page = params[:page] ? params[:page] : 1
+    per_page = params[:per_page] ? params[:per_page] : 10
+
+    reservations = Reservation.where('from_date > ?', date.prev_day)
+                              .paginate(page: page, per_page: per_page)
+
+    render json: ReservationsHelper.list_view(reservations)
   end
 
   def show

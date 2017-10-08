@@ -34,7 +34,7 @@ export class Calendar extends React.Component {
 
     render() {
         if (!this.state.ready) {
-            return <PageLoading text="Wait..."/>;
+            return <PageLoading/>;
         }
 
         let groups = this.state.rooms.map((room) => {
@@ -59,10 +59,10 @@ export class Calendar extends React.Component {
             <div className="calendar">
                 <Timeline groups={groups}
                           items={items}
-                          defaultTimeStart={moment().add(-12, 'hour')}
-                          defaultTimeEnd={moment().add(12, 'hour')}
+                          defaultTimeStart={moment().startOf('month')}
+                          defaultTimeEnd={moment().endOf('month')}
                           onCanvasDoubleClick={(groupId, time, e) => {
-                              browserHistory.push({pathname: '/calendario/nuevo', state: {room: groupId, from: new Date(time).toISOString()}});
+                              browserHistory.push({pathname: '/calendario/nuevo', state: {room: groupId, from: time}});
                           }
                           }
                 />

@@ -13,6 +13,10 @@ module.exports = merge(config, {
     errorDetails: true
   },
 
+  performance: {
+      hints: false
+  },
+
   output: {
     pathinfo: true
   },
@@ -22,4 +26,4 @@ module.exports = merge(config, {
       debug: true
     })
   ]
-})
+});

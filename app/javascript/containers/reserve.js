@@ -32,7 +32,7 @@ export class Reserve extends React.Component {
 
   render() {
     const reservation = this.state.reservation;
-    if (!reservation) { return <PageLoading text="Wait..." />; }
+    if (!reservation) { return <PageLoading />; }
     let groups = [{id: 1, title: reservation.room.name}];
     let items = [
         {   id: 1,

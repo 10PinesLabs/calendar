@@ -42,7 +42,7 @@ window.Homeland = {
       let queryString = QueryString.stringify(data);
       url = url + '?' + queryString;
     } else {
-      var formData = new FormData();
+      const formData = new FormData();
       for (const key in data) {
         formData.append(key, data[key]);
       }
@@ -53,13 +53,6 @@ window.Homeland = {
       return res.json();
     });
   },
-
-  signOut() {
-    return $.ajax({
-      url: "/oauth",
-      method: 'delete'
-    });
-  }
 };
 
 const routes =
@@ -67,22 +60,10 @@ const routes =
       <Route path="/" component={App}>
         <IndexRoute component={Home}/>
         <Route path="calendario" component={Calendar}>
-          <IndexRoute/>
           <Route path="nuevo" component={NewReserve}/>
         </Route>
         <Route path="reserva" component={ReservationList}/>
-        <Route path="reserva/:id" component={Reserve}>
-          <IndexRoute component={UserReservationList}/>
-          <Route path="replies" component={UserReplies}/>
-          <Route path="followers" component={UserFollowers}/>
-          <Route path="following" component={UserFollowing}/>
-        </Route>
-        <Route path="usuario/:id" component={User}>
-          <IndexRoute component={UserReservationList}/>
-          <Route path="replies" component={UserReplies}/>
-          <Route path="followers" component={UserFollowers}/>
-          <Route path="following" component={UserFollowing}/>
-        </Route>
+        <Route path="reserva/:id" component={Reserve}/>
       </Route>
     </Router>;
 

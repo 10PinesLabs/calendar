@@ -6,7 +6,9 @@ export class Home extends Component {
   render() {
     return (
       <div id="home-container">
-        <Calendar />
+        <h1>
+            Hay que logearse papu
+        </h1>
       </div>
     )
   }
