@@ -40,6 +40,10 @@ module.exports = {
           runner: '../bin/rails runner'
         }
       },
+      {
+          test: /\.css$/,
+          loader: "style-loader!css-loader"
+      },
     ]
   },
 
@@ -62,4 +66,4 @@ module.exports = {
       path.resolve('../vendor/node_modules'),
     ]
   }
-}
+};

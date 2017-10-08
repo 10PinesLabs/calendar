@@ -7,5 +7,6 @@ export * from './reservation_list';
 export * from './topic_detail';
 export * from './user';
 export * from './reserve';
+export * from './calendar';
 export * from './users/user_replies';
 export * from './users/user_cards';

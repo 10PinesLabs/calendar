@@ -86,4 +86,8 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Set the server timezone
+  config.time_zone = 'Buenos Aires'
+  config.active_record.default_timezone = :local
 end

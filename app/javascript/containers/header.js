@@ -16,7 +16,7 @@ export class Header extends Component {
           </button>
           <div className="collapse navbar-collapse" id="main-nav-menu">
             <ul className="nav navbar-nav main-nav mr-auto mt-2 mt-md-0">
-              <li className="nav-item"><IndexLink className="nav-link" activeClassName="active" to="/">Calendario</IndexLink></li>
+              <li className="nav-item"><IndexLink className="nav-link" activeClassName="active" to="/calendario">Calendario</IndexLink></li>
               <li className="nav-item"><Link className="nav-link" activeClassName="active" to="/reserva">Reservas</Link></li>
               <li className="nav-item"><Link className="nav-link" activeClassName="active" to="/sala">Salas</Link></li>
               <li className="nav-item"><Link className="nav-link" activeClassName="active" to="/rant">Rants</Link></li>

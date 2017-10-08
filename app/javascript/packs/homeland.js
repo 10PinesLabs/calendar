@@ -13,6 +13,7 @@ import {
   Home,
   User,
   Reserve,
+  Calendar,
   TopicDetail,
   ReservationList,
   UserReservationList,
@@ -60,25 +61,26 @@ window.Homeland = {
   }
 };
 
-var routes =
-  <Router history={browserHistory}>
-    <Route path="/" component={App}>
-      <IndexRoute component={Home} />
-      <Route path="reserva" component={ReservationList} />
-      <Route path="reserva/:id" component={Reserve}>
-        <IndexRoute component={UserReservationList} />
-        <Route path="replies" component={UserReplies} />
-        <Route path="followers" component={UserFollowers} />
-        <Route path="following" component={UserFollowing} />
+const routes =
+    <Router history={browserHistory}>
+      <Route path="/" component={App}>
+        <IndexRoute component={Home}/>
+        <Route path="calendario" component={Calendar}/>
+        <Route path="reserva" component={ReservationList}/>
+        <Route path="reserva/:id" component={Reserve}>
+          <IndexRoute component={UserReservationList}/>
+          <Route path="replies" component={UserReplies}/>
+          <Route path="followers" component={UserFollowers}/>
+          <Route path="following" component={UserFollowing}/>
+        </Route>
+        <Route path="usuario/:id" component={User}>
+          <IndexRoute component={UserReservationList}/>
+          <Route path="replies" component={UserReplies}/>
+          <Route path="followers" component={UserFollowers}/>
+          <Route path="following" component={UserFollowing}/>
+        </Route>
       </Route>
-      <Route path="usuario/:id" component={User}>
-        <IndexRoute component={UserReservationList} />
-        <Route path="replies" component={UserReplies} />
-        <Route path="followers" component={UserFollowers} />
-        <Route path="following" component={UserFollowing} />
-      </Route>
-    </Route>
-  </Router>
+    </Router>;
 
 document.addEventListener("DOMContentLoaded", e => {
   ReactDOM.render(routes, document.getElementById('root'))

@@ -35,7 +35,13 @@ export class Reserve extends React.Component {
     if (!reservation) { return <PageLoading text="Wait..." />; }
     let groups = [{id: 1, title: reservation.room.name}];
     let items = [
-        {id: 1, group: 1, title: reservation.description, start_time: reservation.from, end_time: reservation.to}
+        {   id: 1,
+            group: 1,
+            title: reservation.description,
+            start_time: new Date(reservation.from).getTime(),
+            end_time: new Date(reservation.to).getTime(),
+            canMove: false
+        }
     ];
 
     return (
