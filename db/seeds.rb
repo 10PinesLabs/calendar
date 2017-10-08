@@ -6,4 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-load(Rails.root.join( 'db', 'seeds', "#{Rails.env.downcase}.rb"))
+Metadata.create([{
+                  description: 'Con gente de afuera',
+                  icon: 'briefcase'
+                }, {
+                  description: 'Necesita TV',
+                  icon: 'television'
+                }, {
+                  description: 'Con mucha gente',
+                  icon: 'users'
+                }])
+
+load(Rails.root.join('db', 'seeds', "#{Rails.env.downcase}_seed.rb"))

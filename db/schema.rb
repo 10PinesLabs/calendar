@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171007212357) do
+ActiveRecord::Schema.define(version: 20171007235651) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "metadata", force: :cascade do |t|
+    t.string   "description"
+    t.string   "icon"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "metadata_reservations", force: :cascade do |t|
+    t.integer  "metadata_id"
+    t.integer  "reservation_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["metadata_id"], name: "index_metadata_reservations_on_metadata_id", using: :btree
+    t.index ["reservation_id"], name: "index_metadata_reservations_on_reservation_id", using: :btree
+  end
 
   create_table "reservations", force: :cascade do |t|
     t.string   "description"
@@ -47,6 +63,8 @@ ActiveRecord::Schema.define(version: 20171007212357) do
     t.string   "avatar"
   end
 
+  add_foreign_key "metadata_reservations", "metadata", column: "metadata_id"
+  add_foreign_key "metadata_reservations", "reservations"
   add_foreign_key "reservations", "rooms"
   add_foreign_key "reservations", "users"
 end
