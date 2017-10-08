@@ -23,13 +23,13 @@ export class Calendar extends React.Component {
         Promise.all([
             Homeland.fetch("/rooms/"), Homeland.fetch("/calendar/")
         ])
-        .then(resp => {
-            this.setState({
-                rooms: resp[0],
-                reservations: resp[1],
-                ready: true
+            .then(resp => {
+                this.setState({
+                    rooms: resp[0],
+                    reservations: resp[1],
+                    ready: true
+                });
             });
-        });
     }
 
     render() {
@@ -60,7 +60,14 @@ export class Calendar extends React.Component {
                 <Timeline groups={groups}
                           items={items}
                           defaultTimeStart={moment().add(-12, 'hour')}
-                          defaultTimeEnd={moment().add(12, 'hour')}/>
+                          defaultTimeEnd={moment().add(12, 'hour')}
+                          onCanvasDoubleClick={(groupId, time, e) => {
+                              browserHistory.push({pathname: '/calendario/nuevo', state: {room: groupId, from: new Date(time).toISOString()}});
+                          }
+                          }
+                />
+                <hr/>
+                {this.props.children}
             </div>
         )
     }

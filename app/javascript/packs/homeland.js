@@ -16,6 +16,7 @@ import {
   Calendar,
   TopicDetail,
   ReservationList,
+  NewReserve,
   UserReservationList,
   UserReplies,
   UserFollowers,
@@ -65,7 +66,10 @@ const routes =
     <Router history={browserHistory}>
       <Route path="/" component={App}>
         <IndexRoute component={Home}/>
-        <Route path="calendario" component={Calendar}/>
+        <Route path="calendario" component={Calendar}>
+          <IndexRoute/>
+          <Route path="nuevo" component={NewReserve}/>
+        </Route>
         <Route path="reserva" component={ReservationList}/>
         <Route path="reserva/:id" component={Reserve}>
           <IndexRoute component={UserReservationList}/>

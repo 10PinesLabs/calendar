@@ -4,6 +4,7 @@ export * from './app';
 // App Containers
 export * from './home';
 export * from './reservation_list';
+export * from './new_reserve';
 export * from './topic_detail';
 export * from './user';
 export * from './reserve';
