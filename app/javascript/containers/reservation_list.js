@@ -30,7 +30,7 @@ export class ReservationList extends Component {
   }
 
   fetchData() {
-    let path = "/reservations";
+    let path = "/reservations.json";
     let options = { type: this.props.options };
 
     Homeland.fetch(path, options).then(res => {

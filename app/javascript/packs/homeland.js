@@ -12,6 +12,7 @@ import {
   App,
   Home,
   User,
+  Reserve,
   TopicDetail,
   ReservationList,
   UserReservationList,
@@ -64,7 +65,13 @@ var routes =
     <Route path="/" component={App}>
       <IndexRoute component={Home} />
       <Route path="reserva" component={ReservationList} />
-      <Route path=":id" component={User}>
+      <Route path="reserva/:id" component={Reserve}>
+        <IndexRoute component={UserReservationList} />
+        <Route path="replies" component={UserReplies} />
+        <Route path="followers" component={UserFollowers} />
+        <Route path="following" component={UserFollowing} />
+      </Route>
+      <Route path="usuario/:id" component={User}>
         <IndexRoute component={UserReservationList} />
         <Route path="replies" component={UserReplies} />
         <Route path="followers" component={UserFollowers} />

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import { Reply, NodeLink, PageLoading } from 'components'
+import { Reply, PageLoading } from 'components'
 
 export class TopicDetail extends React.Component {
   constructor(props){
@@ -64,7 +64,7 @@ export class TopicDetail extends React.Component {
 
     return (
       <div className="topic-detail">
-        <h1><NodeLink node={topic} /> {topic.title}</h1>
+        <h1>{topic.title}</h1>
         <div className="row">
           <div className="col-md-9">
             <div className="topic-content">

@@ -4,7 +4,6 @@ export * from './timeago';
 export * from './page_loading';
 export * from './icon_button';
 export * from './like_button';
-export * from './node_link';
 export * from './reservation_link';
 export * from './reservation_metadata';
 export * from './reservation';

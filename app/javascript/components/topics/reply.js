@@ -1,7 +1,7 @@
 import React from 'react';
 import { Component } from 'react';
 import { Link } from 'react-router';
-import { UserAvatarLink, UserNameLink, Timeago, LikeButton, IconButton, TopicLink } from 'components'
+import { UserAvatarLink, UserNameLink, Timeago, LikeButton, IconButton } from 'components'
 
 export class Reply extends Component {
   constructor(props){
@@ -124,7 +124,7 @@ export class Reply extends Component {
             <span>
               在
               <span className="topic">
-                <TopicLink topic={item.mention_topic} />
+                {item.mention_topic}
               </span>
               中提及了此贴
             </span>
